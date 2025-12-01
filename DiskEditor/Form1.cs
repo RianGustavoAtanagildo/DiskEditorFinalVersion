@@ -241,9 +241,6 @@ namespace DiskEditor
             }
         }
 
-        // -----------------------
-        // BOTÃO OPENFILE (novo)
-        // -----------------------
         private void OpenFileBtn_Click(object? sender, EventArgs e)
         {
             using var of = new OpenFileDialog();
