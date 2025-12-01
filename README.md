@@ -1,117 +1,142 @@
-DiskEditor – Editor Hexadecimal de Setores de Disco (C# WinForms)
+# 🧩 **DiskEditor -- Editor Hexadecimal de Setores de Disco (C# WinForms)**
 
-O DiskEditor é uma aplicação Windows Forms desenvolvida em C# que permite ler, visualizar, editar e gravar setores brutos (raw sectors) de discos físicos ou arquivos. O programa exibe os bytes em formato hexadecimal + ASCII, permitindo navegação por setor, edição byte a byte e escrita direta no disco recurso extremamente poderoso e perigoso.
+Um poderoso editor hexadecimal desenvolvido em **C# + Windows Forms**,
+capaz de **ler, navegar, editar e gravar setores brutos (raw sectors)**
+de discos físicos ou arquivos binários.
 
-AVISO IMPORTANTE:
+Ele exibe dados em **HEX + ASCII**, permite navegação por setor, edição
+byte a byte e escrita direta --- um recurso extremamente útil, porém
+**potencialmente perigoso**.
 
-Este aplicativo permite escrever diretamente setores físicos do disco, o que pode corromper o sistema operacional, arquivos, partições ou até tornar o PC não inicializável. Use-o somente em ambientes controlados e com conhecimento adequado.
+------------------------------------------------------------------------
 
-Funcionalidades:
+## ⚠️ **AVISO IMPORTANTE**
 
-Leitura e Navegação
+> ### ⚠️ **RISCO REAL DE CORRUPÇÃO DE DADOS**
+>
+> Este software permite **escrita direta em setores físicos do disco**.\
+> Uso incorreto pode causar: - Corrupção do Windows\
+> - Perda de arquivos\
+> - Quebra de partições\
+> - Sistema não inicializável
+>
+> **Use somente com conhecimento técnico.**
 
-Seleção de unidades físicas disponíveis (exceto CD/DVD).
+------------------------------------------------------------------------
 
-Leitura setor a setor (512 bytes por setor).
+# ✨ **Funcionalidades**
 
-Exibição dos dados em formato hexadecimal organizado em linhas de 16 bytes.
+## 🔍 **Leitura & Navegação**
 
-Exibição simultânea em ASCII.
+-   Seleção de unidades físicas disponíveis\
+-   Leitura setor a setor (**512 bytes**)\
+-   Exibição em:
+    -   Hexadecimal (16 bytes por linha)
+    -   ASCII ao lado\
+-   Controles de navegação:
+    -   ⬅️ **Setor Anterior**
+    -   ➡️ **Próximo Setor**
+    -   🎯 **Ir para Offset** (HEX ou decimal)
+-   🔎 Busca por padrão hexadecimal (ex: `DEADBEEF`)
 
-Navegação:
+------------------------------------------------------------------------
 
-Setor anterior.
+## ✏️ **Edição de Dados**
 
-Próximo setor.
+-   Edição direta dos bytes em HEX\
+-   Validação automática da entrada\
+-   Atualização em tempo real da coluna ASCII\
+-   Status mostra qual byte foi modificado\
+-   Escrita direta no arquivo ao salvar
 
-Ir para offset global (hex ou decimal).
+------------------------------------------------------------------------
 
-Busca por sequência hexadecimal dentro do setor atual (ex: DEADBEEF).
+# 🖥️ **Requisitos**
 
-Seleção automática da linha correspondente.
+-   ✔️ Windows\
+-   ✔️ Visual Studio 2022\
+-   ✔️ .NET SDK **8.0+**\
+-   ✔️ Executar o Visual Studio **como Administrador**
 
-Edição:
+------------------------------------------------------------------------
 
-Edição direta dos bytes em HEX no DataGridView.
+# 📥 **Clonando o Repositório**
 
-Validação automática do valor digitado.
+``` bash
+git clone https://github.com/seu-repo-aqui/DiskEditor.git
+```
 
-Atualização automática da coluna ASCII.
+OU:
 
-Destaque no status indicando qual offset foi alterado.
+1.  Clique no botão **Code → Clone**
+2.  Copie o link HTTPS
+3.  Abra o Visual Studio → *Clone a repository*
+4.  Cole o link
 
-Requisitos:
+------------------------------------------------------------------------
 
-Windows
+# ▶️ **Como Usar**
 
-Visual Studio 2022
+## 📂 **Abrir Arquivo**
 
-Suporte à linguagem C#
+1.  Clique em **Open**
+2.  Escolha um arquivo binário ou imagem de disco
 
-.NET SDK 8.0 ou superior
+------------------------------------------------------------------------
 
-Abrir o Visual Studio como Administrador
+## 🧭 **Navegação**
 
-Clone o repositório:
+O arquivo é dividido automaticamente em setores de **512 bytes**.
 
-Na pagina principal tem uma opção que diz clonar repositório só clicar nela e colar o link do projeto.
+Botões: - **Prev Sector** - **Next Sector**
 
-Clique em Start ou pressione F5 para executar.
+A barra inferior mostra o setor atual.
 
-Como Usar o DiskEditor:
+------------------------------------------------------------------------
 
-Abertura
+## 🔎 **Busca HEX**
 
-Clique em Open
+Digite um valor HEX no campo **Find**:
 
-Selecione o arquivo binário ou imagem de disco que deseja visualizar
+    FF 00 1A
+    DEADBEEF
+    90 90 90
 
-Navegação
+------------------------------------------------------------------------
 
-O conteúdo é automaticamente dividido em setores de 512 bytes.
+## 🎯 **Ir Para Offset**
 
-Use:
+Aceita **decimal** ou **hexadecimal**:
 
-Prev Sector
+    512
+    0x200
 
-Next Sector
+------------------------------------------------------------------------
 
-O setor atual é exibido na barra inferior.
+## 📝 **Editar Bytes**
 
-Busca:
+-   Clique no byte desejado
+-   Digite o valor em HEX
+-   Confirme
+-   Clique em **Save** para gravar no arquivo
 
-Digite uma sequência em hexadecimal no campo Find
+------------------------------------------------------------------------
 
-Exemplo: FF 00 1A
+# 🛠️ **Tecnologias Utilizadas**
 
-Ir para Offset
+-   C#\
+-   .NET 8\
+-   Windows Forms\
+-   DataGridView\
+-   Manipulação de binários\
+-   Acesso RAW ao disco
 
-Aceita decimal ou hexadecimal
+------------------------------------------------------------------------
 
-Exemplo: 512 ou 0x200
+# 🎓 **Objetivo Acadêmico**
 
-Edição:
-
-Clique em qualquer byte na tabela para alterar seu valor
-
-Clique em Save para gravar as mudanças no arquivo
-
-Tecnologias Utilizadas:
-
-C#
-
-.NET 8
-
-Windows Forms
-
-DataGridView
-
-Manipulação de arquivos binários
-
-Objetivo Acadêmico
-
-O projeto tem como propósito demonstrar:
-
-Como setores representam unidades reais de leitura/escrita
-
-Como dados são exibidos em Hex e ASCII Funcionamento de editores de baixo nível Interação entre software e armazenamento físico
+Este projeto demonstra conceitos fundamentais como: - Como setores
+representam blocos reais de armazenamento\
+- Exibição de dados *HEX + ASCII*\
+- Funcionamento de editores hexadecimais\
+- Interação entre software e hardware de discos
