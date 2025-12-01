@@ -8,6 +8,8 @@ Ele exibe dados em **HEX + ASCII**, permite navegação por setor, edição
 byte a byte e escrita direta --- um recurso extremamente útil, porém
 **potencialmente perigoso**.
 
+**Para Inicializar lembre de executar o Visual Studio como ADMINISTRADOR**
+
 ------------------------------------------------------------------------
 
 ## ⚠️ **AVISO IMPORTANTE**
@@ -63,7 +65,7 @@ byte a byte e escrita direta --- um recurso extremamente útil, porém
 # 📥 **Clonando o Repositório**
 
 ``` bash
-git clone https://github.com/seu-repo-aqui/DiskEditor.git
+git clone https://github.com/RianGustavoAtanagildo/DiskEditorFinalVersion.git
 ```
 
 OU:
